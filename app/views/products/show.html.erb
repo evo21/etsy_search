@@ -1,0 +1,69 @@
+  <header>
+  <!-- Header content -->
+    <div class="header-container">
+      <div class="logo-box">
+        <img src="https://www.etsy.com/assets/dist/images/etsylogo.20150203215610.png">
+      </div>
+      
+      <div class="search-wrapper">
+        <input class="search-box" type="text" name="q">
+        <input class="search-button" type="submit" value="Search" action="search_etsy">
+        <input class="browse-button" type="submit" value="Browse">
+      </div>
+    </div>
+
+
+    <div class="search-stats">
+      <p class="categories-section-header"><strong>Show Results For:</strong></p>
+      <p class="search-section-header"><strong>"<%= @search_term %>"</strong> We found <%= @count %> items!</p><br><br>
+     </div>
+  </header>
+
+<div id="products-body">
+  <div id="sidebar">
+    <div class="sidebar-container">
+      <h4>Item Type</h4>
+
+      <div class="radios">
+        <ul>
+          <li><label><input type="radio" name="marketplace" value><span
+           class="sidebar-text">All Items</span></label></li>
+          <li><label><input type="radio" name="marketplace" value><span
+           class="sidebar-text">Handmade</span></label></li>
+          <li><label><input type="radio" name="marketplace" value><span
+           class="sidebar-text">Vintage</span></label></li>
+    	  <li><label><input type="radio" name="marketplace" value><span
+    	  class="sidebar-text">Craft Supplies</span></label></li>
+        </ul>
+      <hr>
+  	    <ul>
+  	      <li>Art</li>
+  	      <li>Jewelry</li>
+  	      <li>Paper Goods</li>
+  	      <li>Houswares</li>
+  	      <li>etc...</li>
+        </ul>
+	  </div>
+    </div>
+  </div>
+
+<!-- Main Page content -->  
+
+	<% @results.each do |result| %>
+  	  <div class="product-box">
+        <div class="product-img">
+          <img src = <%= result[:mainimage] %> ><br>
+      	  <div class="product-shop">
+      		<%= link_to result[:shop] %>
+      		<div class="product-price">$<%= "#{result[:price]}" %> USD </div>
+      	  </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+  <footer>
+    <!-- Footer content -->
+  </footer>

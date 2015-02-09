@@ -1,0 +1,1 @@
+Etsy.api_key = 'szsuyrybalc114zfp0w8ah92'
